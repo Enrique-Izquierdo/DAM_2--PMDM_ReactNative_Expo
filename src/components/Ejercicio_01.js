@@ -2,16 +2,24 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
-
-export default class Ejercicio_01 extends Component {
-  render() {
+const Ejercicio_01 = () => {
     return(
-      <View>      
-        <Text>Ejercicio 1</Text>
-      </View>
+    <View style={styles.container}>
+      <Text>Ejercicio 1</Text>
+      <View style={styles.cuadradoNegro} />
+      <View style={styles.cuadradoGris} />
+      <View style={styles.cuadradoNegro} />
+      <View style={styles.cuadradoGris} />
+      <View style={styles.cuadradoNegro} />
+      <View style={styles.cuadradoGris} />
+      <View style={styles.cuadradoNegro} />
+      <View style={styles.cuadradoGris} />
+      <StatusBar style="auto" />
+    </View>
     );
-  }
 }
+
+export default Ejercicio_01;
 
 // export default function Ejercicio_01() {
 //   return (
@@ -21,22 +29,15 @@ export default class Ejercicio_01 extends Component {
 //   );
 // }
 
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//       flexDirection: 'column',
-//       backgroundColor: '#fff',
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//     },
-//     cuadradoNegro: {
-//       flex: 1,
-//       backgroundColor: '#000',
-//       width: Dimensions.get('window').height/8,
-//     },
-//     cuadradoGris: {
-//       flex: 1,
-//       backgroundColor: '#9c9c9c',
-//       width: Dimensions.get('window').height/8,
-//     }
-//   });
+const styles = StyleSheet.create({
+  cuadradoNegro: {
+    flex: 1,
+    backgroundColor: '#000',
+    width: Dimensions.get('window').height/3,
+  },
+  cuadradoGris: {
+    flex: 1,
+    backgroundColor: '#9c9c9c',
+    width: Dimensions.get('window').height/3,
+  },
+  });
