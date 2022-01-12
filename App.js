@@ -1,65 +1,28 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, StyleSheet, Text, View, Image, ScrollView, Button, TextInput, } from 'react-native';
 import { useState } from 'react';
 import { Alert } from 'react-native-web';
+import Entrada from './src/components/entrada_formulario';
 
 export default function App() {
   //useState()
   const [estadoBoton, setEstadoBoton] = useState(0);
 
-  //useState()  opcion A 
-  // const [text, onChangeText] = useState('');
-  //useState()  opcion B 
-  const [estado, setEstado] = useState('');
-  const handleChangeText = (event) => {
-    if(isNaN(event)){
-      setEstado(event);
-    } else{
-      Alert.alert('Error', 'Has introducido un número');
-    }    
-  };
+  // const [estado, setEstado] = useState('');
+  // const handleChangeText = (event) => {
+  //     if(isNaN(event)){
+  //     setEstado(event);
+  //     } else{
+  //     Alert.alert('Error', 'Has introducido un número');
+  //     }    
+  // };
 
   return (
-    <View style={styles.container}>      
-      <View style={styles.fila}>
-        <View>
-          <Text>Nombre: </Text>
-        </View>
-        <View>
-            {/* Opcion A */}
-            {/* <TextInput style={{borderWidth:1}} onChangeText={onChangeText}/>
-            <Text>{text}</Text> */}
-            {/* Opcion B */}
-          <TextInput style={{borderWidth:1}} onChangeText={handleChangeText}/>
-          <Text>{estado}</Text>
-          
-        </View>
-        <StatusBar style="auto" />   
-      </View>
-
-      <View style={styles.fila}>
-        <View>
-          <Text>email: </Text>
-        </View>
-        <View>
-          {/* Opcion B */}
-          <TextInput style={{borderWidth:1}} onChangeText={handleChangeText}/>
-          <Text>{estado}</Text>
-        </View>
-        <StatusBar style="auto" />   
-      </View>
-
-      <View style={styles.fila}>
-        <View>
-          <Text>contraseña: </Text>
-        </View>
-        <View>
-          {/* Opcion B */}
-          <TextInput style={{borderWidth:1}} onChangeText={handleChangeText}/>
-          <Text>{estado}</Text>
-        </View>
-        <StatusBar style="auto" />   
-      </View>
+    <View style={styles.container}> 
+      <Entrada nombre="Nombre" />
+      {/* <Entrada nombre="Email" />
+      <Entrada nombre="Contraseña:" /> */}
       <Button
             title="Púlsame" 
             style={{
@@ -83,7 +46,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: "space-around",
+    justifyContent: "center",
   },
   fila: {
     flex: 1,
