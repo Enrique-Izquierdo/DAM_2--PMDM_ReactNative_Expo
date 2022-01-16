@@ -1,21 +1,32 @@
 import { Dimensions, StyleSheet, Text, View, Image, ScrollView, Button, TextInput} from 'react-native';
-
-import Formulario from './src/components/formulario';
+import { Provider as PaperProvider } from 'react-native-paper';
+import Formulario from './src/components/formulario_Paper';
 
 export default function App() {
-  return (    
-    <View style={styles.container}>  
-      <Formulario /> 
-    </View>
+  return ( 
+
+      <PaperProvider>
+        <View style={styles.container}>  
+          <Formulario /> 
+        </View>
+      </PaperProvider>
+
+
+
+    // <View style={styles.container}>  
+    //   <Formulario /> 
+    // </View>
   );
 }
+
+
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#fff',
+    backgroundColor: '#aaaaaa',
     alignItems: 'center',
     justifyContent: 'center',
   },
