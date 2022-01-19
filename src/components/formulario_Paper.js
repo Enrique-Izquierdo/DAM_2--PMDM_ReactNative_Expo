@@ -52,7 +52,7 @@ const Formulario = () => {
     }
 
     // Lógica entra Email
-    const [email, setEmail] = useState(''); 
+    const [email, setEmail] = useState('1'); 
     const [visible_Email, setVisible_Email] = useState(false);
     const handleOnFocus_Email = () => {
         setVisible_Email(false);
